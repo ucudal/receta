@@ -17,5 +17,10 @@ namespace Full_GRASP_And_SOLID.Library
         public string Description { get; set; }
 
         public double HourlyCost { get; set; }
+        /*calculo cada hora de equipamiento*/
+        public double Costo(int hours)
+        {
+            return hours*HourlyCost;
+        }
     }
 }

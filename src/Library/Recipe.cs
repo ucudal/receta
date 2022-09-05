@@ -24,7 +24,16 @@ namespace Full_GRASP_And_SOLID.Library
         {
             this.steps.Remove(step);
         }
-
+        /*calculo el costo total*/
+        public double Costo()
+        {
+            double total=0;
+            foreach (Step step in this.steps)
+            {
+                total=total+step.Costo();
+            }
+            return total;
+        }
         public void PrintRecipe()
         {
             Console.WriteLine($"Receta de {this.FinalProduct.Description}:");

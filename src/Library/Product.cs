@@ -17,5 +17,10 @@ namespace Full_GRASP_And_SOLID.Library
         public string Description { get; set; }
 
         public double UnitCost { get; set; }
+        /*calculo costo de insumos*/
+        public double Costo(double cantidad)
+        {
+            return UnitCost*cantidad;
+        }
     }
 }

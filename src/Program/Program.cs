@@ -26,6 +26,8 @@ namespace Full_GRASP_And_SOLID
             recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
             recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));
             recipe.PrintRecipe();
+            /*imprimo total y receta*/
+            Console.WriteLine("costo :"+recipe.Costo());
         }
 
         private static void PopulateCatalogs()
@@ -66,8 +68,20 @@ namespace Full_GRASP_And_SOLID
 
         private static Equipment GetEquipment(string description)
         {
+
+            /*ArrayList lista=new ArrayList();
+            foreach(Equipment equipment in equipmentCatalog)
+            {
+                if(equipment.Description==description)
+                {
+                    lista.Add(equipment);
+                }
+            }*/
+
+
             var query = from Equipment equipment in equipmentCatalog where equipment.Description == description select equipment;
             return query.FirstOrDefault();
         }
     }
 }
+/*use el principio de responsabilidad unica (SRP)*/
